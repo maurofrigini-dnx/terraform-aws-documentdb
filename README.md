@@ -4,18 +4,17 @@ Terraform module for provisioning DocumentDB clusters on AWS
 ## Usage
 
 ```hcl
-module "redis" {
+module "docdb" {
   source  = "dare-global/documentdb/aws"
   version = "1.X.X"
 
-  name_prefix = "documentdb-cluster-example"
+  name_prefix = "docdbdb-cluster-example"
 
   instance_class = "db.t3.medium"
-  replica_count  = "2"
+  instance_count  = "1"
 
   engine                  = "docdb"
   engine_version          = "5.0.0"
-  engine_parameter_family = "docdb-5.0.0"
 
   master_username = "master"
   master_password = "password"
@@ -65,7 +64,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. | `bool` | `false` | no |
-| <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | Common name prefix used to name resources | `string` | n/a | yes |
+| <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | Common name prefix used to name resources | `number` | `1` | no |
 | <a name="input_cidr_blocks"></a> [cidr\_blocks](#input\_cidr\_blocks) | ipv4 cidr ranges to associate with the security group | `list(string)` | `[]` | no |
 | <a name="input_create_security_group"></a> [create\_security\_group](#input\_create\_security\_group) | Whether to create a security group for the cluster | `bool` | `true` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Enable deletion protection for the cluster | `bool` | `null` | no |

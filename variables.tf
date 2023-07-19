@@ -21,7 +21,8 @@ variable "vpc_id" {
 
 variable "backup_retention_period" {
   description = "Common name prefix used to name resources"
-  type        = string
+  type        = number
+  default     = 1
 }
 
 variable "preferred_backup_window" {

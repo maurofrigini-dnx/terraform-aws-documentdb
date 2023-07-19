@@ -1,8 +1,9 @@
 resource "aws_docdb_cluster_instance" "docdb" {
   count = var.instance_count
 
+  identifier_prefix = "${aws_docdb_cluster.docdb.cluster_identifier}-${count.index}-"
+
   apply_immediately               = var.apply_immediately
-  identifier_prefix               = "${aws_docdb_cluster.docdb.cluster_identifier}-${count.index}-"
   cluster_identifier              = aws_docdb_cluster.docdb.id
   instance_class                  = var.instance_class
   enable_performance_insights     = var.enable_performance_insights

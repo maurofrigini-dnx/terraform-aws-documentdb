@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 data "aws_vpc" "default" {
-  default = false
+  default = true
 }
 
 data "aws_subnets" "all" {
@@ -23,25 +23,24 @@ data "aws_subnets" "all" {
   }
 }
 
-resource "random_password" "password" {
+resource "random_password" "docdb" {
   length  = 16
-  special = true
+  special = false
 }
 
 module "docdb" {
   source = "../.."
 
-  name_prefix = "documentdb-cluster-example"
+  name_prefix = "docdb-cluster-example"
 
   instance_class = "db.t3.medium"
-  replica_count  = "2"
+  instance_count = "1"
 
-  engine                  = "docdb"
-  engine_version          = "5.0.0"
-  engine_parameter_family = "docdb-5.0.0"
+  engine         = "docdb"
+  engine_version = "5.0.0"
 
   master_username = "master"
-  master_password = random_password.password
+  master_password = random_password.docdb.result
 
   vpc_id     = data.aws_vpc.default.id
   subnet_ids = data.aws_subnets.all.ids
@@ -50,7 +49,7 @@ module "docdb" {
 
   skip_final_snapshot = true
 
-  create_security_group = true
+  apply_immediately = true
 
   parameters = [
     {
