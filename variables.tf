@@ -96,7 +96,7 @@ variable "enabled_cloudwatch_logs_exports" {
 variable "parameters" {
   description = "A list of DB cluster parameters to apply. Note that parameters may differ from one family to an other"
   type        = list(object({ apply_method = optional(string), value = string, name = string }))
-  default     = null
+  default     = []
 }
 
 variable "create_security_group" {
