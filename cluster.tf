@@ -1,7 +1,7 @@
 resource "aws_docdb_cluster_instance" "docdb" {
   count = var.instance_count
 
-  identifier_prefix = "${aws_docdb_cluster.docdb.cluster_identifier}-${count.index}-"
+  identifier_prefix = "${var.name_prefix}-${count.index}-"
 
   apply_immediately               = var.apply_immediately
   cluster_identifier              = aws_docdb_cluster.docdb.id
