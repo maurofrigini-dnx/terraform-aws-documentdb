@@ -66,6 +66,7 @@ No modules.
 | <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. | `bool` | `false` | no |
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | Common name prefix used to name resources | `number` | `1` | no |
 | <a name="input_cidr_blocks"></a> [cidr\_blocks](#input\_cidr\_blocks) | ipv4 cidr ranges to associate with the security group | `list(string)` | `[]` | no |
+| <a name="input_cluster_instance_name_prefix"></a> [cluster\_instance\_name\_prefix](#input\_cluster\_instance\_name\_prefix) | Common name prefix used to name resources | `string` | `null` | no |
 | <a name="input_create_security_group"></a> [create\_security\_group](#input\_create\_security\_group) | Whether to create a security group for the cluster | `bool` | `true` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Enable deletion protection for the cluster | `bool` | `null` | no |
 | <a name="input_enable_performance_insights"></a> [enable\_performance\_insights](#input\_enable\_performance\_insights) | Enable performance insights for the cluster instances | `bool` | `true` | no |
@@ -78,7 +79,7 @@ No modules.
 | <a name="input_master_password"></a> [master\_password](#input\_master\_password) | The password for the master db password. This should be created using a random string | `string` | n/a | yes |
 | <a name="input_master_username"></a> [master\_username](#input\_master\_username) | The password for the master db user. This should be created using a random string | `string` | n/a | yes |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Common name prefix used to name resources | `string` | n/a | yes |
-| <a name="input_parameters"></a> [parameters](#input\_parameters) | A list of DB cluster parameters to apply. Note that parameters may differ from one family to an other | `list(object({ apply_method = optional(string), value = string, name = string }))` | `null` | no |
+| <a name="input_parameters"></a> [parameters](#input\_parameters) | A list of DB cluster parameters to apply. Note that parameters may differ from one family to an other | `list(object({ apply_method = optional(string), value = string, name = string }))` | `[]` | no |
 | <a name="input_performance_insights_kms_key"></a> [performance\_insights\_kms\_key](#input\_performance\_insights\_kms\_key) | KMS key ID to use for performance insights | `string` | `null` | no |
 | <a name="input_port"></a> [port](#input\_port) | The port on which the DB accepts connections | `string` | `"27017"` | no |
 | <a name="input_preferred_backup_window"></a> [preferred\_backup\_window](#input\_preferred\_backup\_window) | Common name prefix used to name resources | `string` | `null` | no |

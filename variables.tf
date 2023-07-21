@@ -3,6 +3,12 @@ variable "name_prefix" {
   type        = string
 }
 
+variable "cluster_instance_name_prefix" {
+  description = "Common name prefix used to name resources"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
   type        = map(string)
