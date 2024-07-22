@@ -9,6 +9,7 @@ resource "aws_docdb_cluster_instance" "docdb" {
   enable_performance_insights     = var.enable_performance_insights
   performance_insights_kms_key_id = var.performance_insights_kms_key
   promotion_tier                  = var.promotion_tier
+  ca_cert_identifier              = var.ca_cert_identifier
 
   tags = var.tags
 }

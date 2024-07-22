@@ -65,6 +65,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. | `bool` | `false` | no |
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | Common name prefix used to name resources | `number` | `1` | no |
+| <a name="input_ca_cert_identifier"></a> [ca\_cert\_identifier](#input\_ca\_cert\_identifier) | Identifier of the certificate authority (CA) certificate for the DB instance. | `string` | `"rds-ca-rsa2048-g1"` | no |
 | <a name="input_cidr_blocks"></a> [cidr\_blocks](#input\_cidr\_blocks) | ipv4 cidr ranges to associate with the security group | `list(string)` | `[]` | no |
 | <a name="input_cluster_instance_name_prefix"></a> [cluster\_instance\_name\_prefix](#input\_cluster\_instance\_name\_prefix) | Common name prefix used to name resources | `string` | `null` | no |
 | <a name="input_create_security_group"></a> [create\_security\_group](#input\_create\_security\_group) | Whether to create a security group for the cluster | `bool` | `true` | no |
