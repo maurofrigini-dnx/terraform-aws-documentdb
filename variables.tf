@@ -174,3 +174,9 @@ variable "apply_immediately" {
   type        = bool
   default     = false
 }
+
+variable "ca_cert_identifier" {
+  description = "Identifier of the certificate authority (CA) certificate for the DB instance."
+  type        = string
+  default     = "rds-ca-rsa2048-g1"
+}
