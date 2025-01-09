@@ -26,6 +26,7 @@ resource "aws_docdb_cluster" "docdb" {
 
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
+  preferred_maintenance_window = var.preferred_maintenance_window
 
   skip_final_snapshot = var.skip_final_snapshot
   apply_immediately   = var.apply_immediately

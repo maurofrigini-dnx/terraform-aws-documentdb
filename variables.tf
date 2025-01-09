@@ -37,6 +37,12 @@ variable "preferred_backup_window" {
   default     = null
 }
 
+variable "preferred_maintenance_window" {
+  description = "The weekly time range during which maintenance on the cluster is performed. Example: 'sun:03:00-sun:04:00'"
+  type        = string
+  default     = null
+}
+
 variable "skip_final_snapshot" {
   description = "Common name prefix used to name resources"
   type        = string
